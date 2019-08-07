@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title></title>
+  <meta content="">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="scene">
+  <div class="cube">
+    <div id="front" class="cubeFace cubeFace-front" onclick="operateOnFace('front')">front</div>
+    <div id="back" class="cubeFace cubeFace-back" onclick="operateOnFace('back')">back</div>
+    <div id="right" class="cubeFace cubeFace-right" onclick="operateOnFace('right')">right</div>
+    <div id="left" class="cubeFace cubeFace-left" onclick="operateOnFace('left')">left</div>
+    <div id="top" class="cubeFace cubeFace-top" onclick="operateOnFace('top')">top</div>
+    <div id="bottom" class="cubeFace cubeFace-bottom" onclick="operateOnFace('bottom')">bottom</div>
+  </div>
+  <div class="cubeHalfMargin">
+    <div class="cubeHalf leftHalf" style="color: black; display: none" onclick="closeFace()"></div>
+    <div class="cubeHalf rightHalf" style="color: black; display: none" onclick="closeFace()"></div>
+  </div>
+</div>
+<p class="radio-group">
+  <label><input type="radio" name="rotate-cube-side" value="front" />front</label>
+  <label><input type="radio" name="rotate-cube-side" value="right" />right</label>
+  <label><input type="radio" name="rotate-cube-side" value="back" />back</label>
+  <label><input type="radio" name="rotate-cube-side" value="left" />left</label>
+  <label><input type="radio" name="rotate-cube-side" value="top" />top</label>
+  <label><input type="radio" name="rotate-cube-side" value="bottom" />bottom</label>
+</p>
+
+</body>
+</html>
+<script type="text/javascript" src="js/cube.js"></script>

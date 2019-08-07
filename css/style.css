@@ -1,0 +1,112 @@
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.scene {
+  width: 200px;
+  height: 200px;
+  /*border: 1px solid #CCC;*/
+  /*margin: 20% auto auto auto;*/
+  margin: 20% 0 0 30%;
+  perspective: 400px;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px) rotateY( 35deg) rotateX(-45deg);
+  transition: transform 1s;
+}
+
+/*.cube.show-front.to-center{transform: translate3d(100px, 100px, -100px) rotate(0deg);}*/
+
+@keyframes translate {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+
+  to {
+    transform: translateX(100px) translateY(100px);
+  }
+}
+
+/*.cube.show-front.to-center{*/
+/*  animation: translate 3s forwards;*/
+/*}*/
+/*.cube.show-front.to-center{ transform: translate3d(5vw, 5vh, 0);}*/
+/*.cube.show-front.to-initial{ transform: translate3d(0,0,0);}*/
+.cube.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
+.cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
+.cube.show-back   { transform: translateZ(-100px) rotateY(-180deg); }
+.cube.show-left   { transform: translateZ(-100px) rotateY(  90deg); }
+.cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
+.cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+
+.leftHalf.open {transform: translate3d(-100px, 0, 0) rotateY(-180deg); /*rotate3d(0,1,0,-180deg);*/}
+.rightHalf.open {transform: translate3d(200px, 0, 0) rotateY(180deg) /*rotate3d(0,1,0,180deg);*/}
+
+.leftHalf.close {transform: translateX(0px) rotateY(0deg);}
+.rightHalf.close {transform: translateX(100px) rotateY(0deg);}
+
+.cubeFace {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cubeHalf {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  border: 2px solid black;
+  /*position: relative;*/
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  line-height: 50px;
+  background-color: blue;
+  cursor: pointer;
+  /*font-size: 40px;*/
+  /*font-weight: bold;*/
+  /*color: white;*/
+  /*text-align: center;*/
+}
+
+.leftHalf {}
+.rightHalf {transform: translateX(100px); }
+
+.cubeFace-front  { /*background: hsla(  0, 100%, 50%, 0.9);*/ background-color: blue;}
+.cubeFace-right  { /*background: hsla( 60, 100%, 50%, 0.9);*/ background-color: blue;}
+.cubeFace-back   { /*background: hsla(120, 100%, 50%, 0.9);*/ background-color: blue;}
+.cubeFace-left   { /*background: hsla(180, 100%, 50%, 0.9);*/ background-color: blue;}
+.cubeFace-top    { /*background: hsla(240, 100%, 50%, 0.9);*/ background-color: blue;}
+.cubeFace-bottom { /*background: hsla(300, 100%, 50%, 0.9);*/ background-color: blue;}
+
+.cubeFace-front  { transform: rotateY(  0deg) translateZ(100px); }
+.cubeFace-right  { transform: rotateY( 90deg) translateZ(100px); }
+.cubeFace-back   { transform: rotateY(180deg) translateZ(100px); }
+.cubeFace-left   { transform: rotateY(-90deg) translateZ(100px); }
+.cubeFace-top    { transform: rotateX( 90deg) translateZ(100px); }
+.cubeFace-bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+.radio-group input{
+  display: none;
+}
+
+/*.radio-group label input:hover{*/
+/*  cursor: pointer;*/
+/*}*/
+
+.cubeHalfMargin{
+  margin-top: -200px;
+}
+
+label { margin-right: 10px; }
